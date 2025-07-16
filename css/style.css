@@ -1,0 +1,1002 @@
+/* Basic Reset & Typography */
+body {
+    font-family: 'Poppins', sans-serif; /* Applied from Google Fonts */
+    margin: 0; /* Removes default browser margin */
+    padding: 0; /* Removes default browser padding */
+    background-color: #f8f8f8; /* Slightly brighter background */
+    color: #333; /* Dark gray text color */
+    line-height: 1.6; /* Improved readability for body text */
+}
+
+/* General Container for content width */
+.container {
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto; /* Centers the container */
+    padding: 0 20px; /* Padding on sides for smaller screens, prevents content touching edges */
+}
+
+/* Header Styling */
+.main-header {
+    background-color: #ffffff; /* White background for header */
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+    /* Flexbox properties for centering and alignment */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Needed for potential future positioning of elements like mobile menu */
+    z-index: 1000; /* Ensure header stays on top of other content */
+}
+
+.main-header .container { /* Adjust container within header to use flex for logo and nav */
+    display: flex;
+    justify-content: space-between; /* Pushes logo to left, nav to right */
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700; /* Bold font weight */
+    color: #007bff; /* CLATNITI primary blue color (example) */
+    text-decoration: none; /* Remove underline from link */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.logo:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+.main-nav ul {
+    list-style: none; /* Remove bullet points from list */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Makes list items display in a row */
+}
+
+.main-nav li {
+    margin-left: 30px; /* Space between navigation items */
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #555; /* Neutral grey for navigation links */
+    font-weight: 500; /* Medium font weight */
+    transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+.main-nav a:hover {
+    color: #007bff; /* Primary blue color on hover */
+}
+
+/* Hero Section Styling */
+.hero-section {
+    background: linear-gradient(135deg, #007bff, #0056b3); /* Blue gradient background */
+    color: #ffffff; /* White text for contrast */
+    text-align: center;
+    padding: 100px 20px; /* Top/bottom padding for vertical spacing */
+    display: flex; /* Use flexbox to center content vertically */
+    align-items: center;
+    justify-content: center;
+    min-height: 500px; /* Minimum height for the hero section to take up space */
+    box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.1); /* Subtle inner shadow at the bottom */
+}
+
+.hero-section h1 {
+    font-size: 4em; /* Larger font size for headline */
+    margin-bottom: 20px;
+    line-height: 1.2; /* Better line spacing for large text */
+    font-weight: 700; /* Bold font weight */
+    animation: fadeInDown 1s ease-out; /* Simple animation for headline */
+}
+
+.hero-section p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    max-width: 800px; /* Limits the width of the paragraph for better readability */
+    margin-left: auto; /* Centers the paragraph */
+    margin-right: auto; /* Centers the paragraph */
+    opacity: 0; /* Hidden initially for animation */
+    animation: fadeInUp 1s ease-out 0.5s forwards; /* Delayed animation for paragraph */
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block; /* Allows setting padding/margin and width */
+    padding: 15px 30px;
+    margin: 10px; /* Space between buttons */
+    border-radius: 5px; /* Slightly rounded corners */
+    text-decoration: none; /* Remove underline from link */
+    font-weight: 600; /* Semi-bold font weight */
+    font-size: 1.1em; /* Slightly larger text for buttons */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions for hover effects */
+    border: none; /* Remove default button border */
+    cursor: pointer; /* Indicates it's clickable */
+}
+
+.btn-primary {
+    background-color: #28a745; /* Green for primary action (e.g., Explore Courses) */
+    color: #ffffff; /* White text on primary button */
+}
+
+.btn-primary:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.btn-secondary {
+    background-color: #ffc107; /* Yellow for secondary action (e.g., Get a Call Back) */
+    color: #333; /* Dark text on secondary button for contrast */
+}
+
+.btn-secondary:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Animations (for trending visual graphics) */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Courses Section Styling */
+.courses-section {
+    padding: 80px 0;
+    background-color: #f0f2f5; /* A slightly darker background for contrast */
+    text-align: center;
+}
+
+.courses-section h2 {
+    font-size: 2.8em;
+    color: #007bff; /* Primary blue for section heading */
+    margin-bottom: 60px;
+    position: relative;
+    display: inline-block; /* Allows pseudo-elements to align */
+}
+
+.courses-section h2::after { /* Underline effect for heading */
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: #28a745; /* Green underline */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+    border-radius: 2px;
+}
+
+.course-cards-grid {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 30px; /* Space between cards */
+    margin-top: 40px;
+}
+
+.course-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* More prominent shadow */
+    overflow: hidden; /* Ensures image corners are rounded with card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Flexbox for content inside card */
+    flex-direction: column; /* Stack content vertically */
+    text-align: left; /* Align text left within card */
+}
+
+.course-card:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.course-card img {
+    width: 100%;
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    border-bottom: 1px solid #eee; /* Separator below image */
+}
+
+.course-card h3 {
+    font-size: 1.8em;
+    color: #0056b3; /* Darker blue for card title */
+    margin: 20px 20px 10px 20px; /* Spacing */
+}
+
+.course-card p {
+    font-size: 1em;
+    color: #666;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allows paragraph to take up available space */
+}
+
+.course-card .btn-card {
+    background-color: #007bff; /* Primary blue for card button */
+    color: #ffffff;
+    padding: 12px 20px;
+    font-size: 0.9em;
+    border-radius: 0 0 10px 10px; /* Rounded only at bottom */
+    width: 100%; /* Full width button */
+    text-align: center;
+    margin: 0; /* Remove default button margin */
+}
+
+.course-card .btn-card:hover {
+    background-color: #0056b3;
+    transform: none; /* Remove lift effect from general button hover */
+}
+
+/* Course Detail Page Specific Styles */
+.course-hero {
+    background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); /* Purple-blue gradient */
+    color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.course-hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+}
+
+.course-hero p {
+    font-size: 1.3em;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.all-courses-listing {
+    padding-bottom: 80px;
+}
+
+.course-detail-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin-bottom: 40px;
+    text-align: left; /* Ensure text alignment is left */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.course-detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.course-detail-card h2 {
+    font-size: 2.5em;
+    color: #007bff;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+}
+
+.course-detail-card .course-overview {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.course-detail-card h3 {
+    font-size: 1.8em;
+    color: #28a745; /* Green for features heading */
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.features-list {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+    margin-bottom: 30px;
+    display: grid; /* Use grid for features */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 2 columns on larger screens */
+    gap: 15px;
+}
+
+.features-list li {
+    font-size: 1.1em;
+    color: #444;
+    margin-bottom: 10px;
+    text-align: left;
+    display: flex; /* Align icon and text */
+    align-items: center;
+}
+
+.features-list li .icon-check { /* Placeholder for icon styling */
+    color: #28a745; /* Green icon */
+    margin-right: 10px;
+    font-size: 1.2em;
+    /* For now, this will just be an empty space until Font Awesome is added */
+}
+
+.course-meta {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed #ddd; /* Dashed line separator */
+    display: flex;
+    justify-content: space-around; /* Distribute eligibility and duration */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.course-meta p {
+    font-size: 1.1em;
+    color: #666;
+    margin: 10px 15px;
+}
+
+.course-actions {
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* Footer Styling (Basic) */
+.main-footer {
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9em;
+}
+
+/* Crash Course Page Specific Styles */
+.crash-hero {
+    background: linear-gradient(135deg, #ffc107, #ff8c00); /* Orange-yellow gradient */
+    color: #333; /* Dark text for contrast */
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* For potential background effects */
+    margin-bottom: 50px;
+}
+
+.crash-hero h1 {
+    font-size: 3.8em;
+    margin-bottom: 15px;
+    color: #333;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.crash-hero p {
+    font-size: 1.4em;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    color: #555;
+}
+
+.limited-time-banner {
+    background-color: #e60000; /* Red for urgency */
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 50px; /* Pill shape */
+    font-weight: 700;
+    font-size: 1.1em;
+    display: inline-flex; /* Allows text and icon on same line */
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    animation: pulse 1.5s infinite; /* Pulsing animation */
+}
+
+.limited-time-banner .icon-fire { /* Placeholder for fire icon */
+    font-size: 1.2em;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.crash-course-overview {
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.overview-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.overview-content h2 {
+    font-size: 2.5em;
+    color: #007bff;
+    margin-bottom: 30px;
+}
+
+.overview-content p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.pricing-card {
+    background-color: #f8f8f8;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    display: inline-block;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pricing-card .old-price {
+    text-decoration: line-through;
+    font-size: 1.5em;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.pricing-card .current-price {
+    font-size: 3.5em;
+    font-weight: 700;
+    color: #e60000; /* Red for discounted price */
+    margin-bottom: 10px;
+}
+
+.pricing-card .discount-tag {
+    background-color: #28a745; /* Green for discount */
+    color: #ffffff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.crash-features, .crash-schedule {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.crash-features {
+    background-color: #f0f2f5;
+}
+
+.crash-features h2, .crash-schedule h2 {
+    font-size: 2.8em;
+    color: #007bff;
+    margin-bottom: 50px;
+}
+
+/* Reuse features-list styling from course-detail-card, but without display grid default */
+.crash-features .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Two columns on larger screens */
+    gap: 20px;
+}
+
+.crash-features .features-list li {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 1.1em;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s ease;
+}
+
+.crash-features .features-list li:hover {
+    transform: translateY(-5px);
+}
+
+.crash-features .features-list li .icon-check {
+    color: #28a745; /* Green checkmark */
+    font-size: 1.3em;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.schedule-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    text-align: left;
+}
+
+.schedule-item h3 {
+    font-size: 1.8em;
+    color: #0056b3;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.schedule-item p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.schedule-note {
+    font-size: 0.9em;
+    color: #888;
+    margin-top: 30px;
+}
+
+/* Inquiry Form Section */
+.inquiry-section {
+    background-color: #eaf6ff; /* Light blue background for form */
+    padding: 60px 0;
+    text-align: center;
+}
+
+.inquiry-section h2 {
+    font-size: 2.5em;
+    color: #007bff;
+    margin-bottom: 40px;
+}
+
+.inquiry-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inquiry-form input[type="text"],
+.inquiry-form input[type="email"],
+.inquiry-form input[type="tel"],
+.inquiry-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+}
+
+.inquiry-form textarea {
+    min-height: 120px;
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.inquiry-form .btn-primary {
+    margin-top: 10px;
+    width: auto; /* Override btn display: block for form button */
+    align-self: center; /* Center the button in flex container */
+}
+
+/* Demo Videos Section Styling */
+.demo-videos-section {
+    padding: 80px 0;
+    background-color: #ffffff; /* White background */
+    text-align: center;
+}
+
+.demo-videos-section h2 {
+    font-size: 2.8em;
+    color: #007bff;
+    margin-bottom: 60px;
+    position: relative;
+    display: inline-block;
+}
+
+.demo-videos-section h2::after { /* Underline effect for heading */
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: #28a745; /* Green underline */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+    border-radius: 2px;
+}
+
+.video-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive grid for videos */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.video-card {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    background-color: #000; /* Fallback for video area */
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-card h3 {
+    font-size: 1.5em;
+    color: #0056b3;
+    margin: 20px 20px 10px 20px;
+}
+
+.video-card p {
+    font-size: 0.95em;
+    color: #666;
+    padding: 0 20px 20px 20px;
+    margin-bottom: 0; /* Remove default margin for last element */
+}
+
+/* Student Testimonials Section Styling */
+.testimonials-section {
+    padding: 80px 0;
+    background-color: #f0f2f5; /* Light gray background */
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    font-size: 2.8em;
+    color: #007bff;
+    margin-bottom: 60px;
+    position: relative;
+    display: inline-block;
+}
+
+.testimonials-section h2::after { /* Underline effect for heading */
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: #28a745; /* Green underline */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+    border-radius: 2px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid for testimonials */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.testimonial-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes content and info apart */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* For quote icon positioning */
+    min-height: 250px; /* Ensure cards have similar height */
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.quote-icon {
+    font-size: 4em;
+    color: #e0e0e0; /* Light gray for subtle icon */
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    line-height: 1;
+    z-index: 0;
+}
+
+.testimonial-text {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    position: relative; /* Ensure text is above quote icon */
+    z-index: 1;
+    padding-top: 15px; /* Space for the quote icon */
+}
+
+.student-info {
+    display: flex;
+    align-items: center;
+    margin-top: auto; /* Pushes student info to the bottom */
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.student-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Circular avatar */
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid #007bff; /* Blue border around avatar */
+}
+
+.student-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.student-name {
+    font-weight: 600;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.student-course {
+    font-size: 0.9em;
+    color: #777;
+}
+
+
+/* --- Responsive Design --- */
+
+/* For screens smaller than 768px (common for tablets and smaller desktops) */
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column; /* Stack logo and nav vertically */
+        align-items: center; /* Center them horizontally */
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        margin-top: 15px; /* Add space between logo and nav */
+        text-align: center; /* Center text within nav */
+    }
+
+    .main-nav li {
+        margin: 10px 0; /* Adjust vertical spacing for nav items */
+    }
+
+    .hero-section {
+        padding: 80px 20px; /* Reduce padding for smaller screens */
+        min-height: 400px; /* Reduce min-height */
+    }
+
+    .hero-section h1 {
+        font-size: 3em; /* Smaller font size for headline on tablets */
+    }
+
+    .hero-section p {
+        font-size: 1.2em; /* Smaller font size for paragraph */
+    }
+
+    .btn {
+        padding: 12px 25px; /* Slightly smaller buttons */
+        font-size: 1em; /* Smaller font size for buttons */
+    }
+
+    /* Course Page specific responsive rules for tablets */
+    .course-hero h1 {
+        font-size: 2.8em;
+    }
+
+    .course-hero p {
+        font-size: 1.1em;
+    }
+
+    .course-detail-card {
+        padding: 30px;
+    }
+
+    .course-detail-card h2 {
+        font-size: 2em;
+    }
+
+    .course-detail-card h3 {
+        font-size: 1.5em;
+    }
+
+    .features-list {
+        grid-template-columns: 1fr; /* Stack features vertically on smaller screens */
+    }
+
+    .course-meta {
+        flex-direction: column; /* Stack meta items vertically */
+        align-items: center;
+    }
+
+    /* Crash Course Page specific responsive rules for tablets */
+    .crash-hero h1 {
+        font-size: 3em;
+    }
+
+    .crash-hero p {
+        font-size: 1.2em;
+    }
+
+    .limited-time-banner {
+        font-size: 1em;
+    }
+
+    .pricing-card .current-price {
+        font-size: 3em;
+    }
+
+    .crash-features .features-list {
+        grid-template-columns: 1fr; /* Stack features vertically */
+    }
+
+    .schedule-grid {
+        grid-template-columns: 1fr; /* Stack schedules vertically */
+    }
+
+    .inquiry-form {
+        padding: 20px;
+    }
+
+    /* Demo Videos Section responsive rules for tablets */
+    .demo-videos-section h2 {
+        font-size: 2.5em;
+        margin-bottom: 50px;
+    }
+
+    .video-card h3 {
+        font-size: 1.3em;
+    }
+
+    /* Student Testimonials Section responsive rules for tablets */
+    .testimonials-section h2 {
+        font-size: 2.5em;
+        margin-bottom: 50px;
+    }
+    .testimonials-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust min-width */
+    }
+    .testimonial-card {
+        min-height: 220px; /* Adjust min-height for smaller screens */
+    }
+    .testimonial-text {
+        font-size: 1em;
+    }
+}
+
+/* For screens smaller than 480px (common for mobile phones) */
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 60px 15px; /* Further reduce padding */
+        min-height: 350px; /* Further reduce min-height */
+    }
+
+    .hero-section h1 {
+        font-size: 2.2em; /* Even smaller font size for mobile headline */
+    }
+
+    .hero-section p {
+        font-size: 1em; /* Smaller font size for mobile paragraph */
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        display: block; /* Make buttons stack vertically on very small screens */
+        width: 90%; /* Take up more width */
+        margin: 10px auto; /* Center buttons */
+    }
+
+    /* Course Page specific responsive rules for mobile */
+    .course-hero h1 {
+        font-size: 2em;
+    }
+
+    .course-hero p {
+        font-size: 1em;
+    }
+
+    .course-detail-card {
+        padding: 20px;
+    }
+
+    .course-detail-card h2 {
+        font-size: 1.8em;
+    }
+
+    /* Crash Course Page specific responsive rules for mobile */
+    .crash-hero h1 {
+        font-size: 2.5em;
+    }
+
+    .crash-hero p {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .limited-time-banner {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+
+    .pricing-card .current-price {
+        font-size: 2.5em;
+    }
+
+    .overview-content h2,
+    .crash-features h2,
+    .crash-schedule h2,
+    .inquiry-section h2 {
+        font-size: 2em;
+    }
+
+    /* Demo Videos Section responsive rules for mobile */
+    .demo-videos-section h2 {
+        font-size: 2.2em;
+        margin-bottom: 40px;
+    }
+
+    .video-card h3 {
+        font-size: 1.2em;
+    }
+
+    /* Student Testimonials Section responsive rules for mobile */
+    .testimonials-section h2 {
+        font-size: 2.2em;
+        margin-bottom: 40px;
+    }
+    .testimonials-grid {
+        grid-template-columns: 1fr; /* Stack testimonials vertically */
+    }
+    .testimonial-card {
+        min-height: auto; /* Let height adjust dynamically */
+        padding: 25px;
+    }
+    .quote-icon {
+        font-size: 3em; /* Smaller quote icon */
+    }
+}
